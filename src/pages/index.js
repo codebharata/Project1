@@ -181,7 +181,7 @@ function renderHomePage() {
   <!-- 5. Intro Section (Two Columns + Cover Image) -->
   <section class="section bg-paper">
     <div class="container">
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-xl); margin-bottom: var(--space-xl);">
+      <div class="two-col-grid" style="margin-bottom: var(--space-xl);">
         <div>
           <span class="eyebrow">Studio Introduction</span>
           <h2>Give wings to your imagination with the best photo album manufacturer in Mumbai</h2>
@@ -406,28 +406,28 @@ function renderHomePage() {
       </div>
 
       <div style="border-top: 1px solid var(--line);">
-        <div style="display: grid; grid-template-columns: 280px 1fr; padding: var(--space-lg) 0; border-bottom: 1px solid var(--line); gap: var(--space-md);">
+        <div class="specs-grid">
           <h3 style="font-family: var(--font-serif); font-size: 1.35rem; margin: 0;">World Wide Delivery</h3>
           <p style="margin: 0; color: var(--ink-soft);">
             Doorstep delivery across India, the United Kingdom, and international studio locations with careful moisture-proof packaging.
           </p>
         </div>
 
-        <div style="display: grid; grid-template-columns: 280px 1fr; padding: var(--space-lg) 0; border-bottom: 1px solid var(--line); gap: var(--space-md);">
+        <div class="specs-grid">
           <h3 style="font-family: var(--font-serif); font-size: 1.35rem; margin: 0;">Cost Effective</h3>
           <p style="margin: 0; color: var(--ink-soft);">
             Direct manufacturer pricing without middleman markups, giving working photographers viable studio margins.
           </p>
         </div>
 
-        <div style="display: grid; grid-template-columns: 280px 1fr; padding: var(--space-lg) 0; border-bottom: 1px solid var(--line); gap: var(--space-md);">
+        <div class="specs-grid">
           <h3 style="font-family: var(--font-serif); font-size: 1.35rem; margin: 0;">Reliable Quality</h3>
           <p style="margin: 0; color: var(--ink-soft);">
             Hand-bound construction, robust spine durability, and archival fine art printing tested for lasting colour fidelity.
           </p>
         </div>
 
-        <div style="display: grid; grid-template-columns: 280px 1fr; padding: var(--space-lg) 0; border-bottom: 1px solid var(--line); gap: var(--space-md);">
+        <div class="specs-grid">
           <h3 style="font-family: var(--font-serif); font-size: 1.35rem; margin: 0;">Customer Centric</h3>
           <p style="margin: 0; color: var(--ink-soft);">
             Personalized support, direct communication with your assigned designer, and revisions until you approve the result.

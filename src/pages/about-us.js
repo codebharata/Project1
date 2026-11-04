@@ -12,7 +12,7 @@ function renderAboutPage() {
         </p>
       </div>
 
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-xl); margin-bottom: var(--space-2xl);">
+      <div class="two-col-grid" style="margin-bottom: var(--space-2xl);">
         <div>
           <h2 style="font-size: 1.75rem;">Origins in Photography</h2>
           <p>
@@ -112,7 +112,7 @@ function renderAboutPage() {
         <p>Understanding page sides and standard panoramic print proportions.</p>
       </div>
 
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-xl);">
+      <div class="two-col-grid">
         <div style="border: 1px solid var(--line); border-radius: var(--radius-sm); padding: var(--space-md);">
           <h3 style="font-size: 1.25rem; margin-bottom: var(--space-sm);">Album Sides Structure</h3>
           <img
@@ -147,7 +147,7 @@ function renderAboutPage() {
   <!-- Why Choose Us & Studio Sample Offer -->
   <section class="section bg-sage">
     <div class="container">
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-xl); align-items: center;">
+      <div class="two-col-grid align-center">
         <div>
           <span class="eyebrow">Studio Standards</span>
           <h2>Why Choose Ultraa Album</h2>

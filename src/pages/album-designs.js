@@ -12,7 +12,7 @@ function renderAlbumDesignsPage() {
         </p>
       </div>
 
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: var(--space-xl);">
+      <div class="product-grid">
         <!-- Theme 1 -->
         <article style="border: 1px solid var(--line); border-radius: var(--radius-sm); overflow: hidden; background: var(--paper);">
           <div style="width: 100%; aspect-ratio: 2 / 1; background: var(--blush); overflow: hidden;">

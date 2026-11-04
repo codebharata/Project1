@@ -4,7 +4,7 @@ function renderLanding2023Page() {
   const content = `
   <section class="section bg-paper">
     <div class="container">
-      <div style="display: grid; grid-template-columns: 7fr 5fr; gap: var(--space-xl); align-items: center; margin-bottom: var(--space-2xl);">
+      <div class="page-hero-grid">
         <div>
           <span class="eyebrow">Personalized Studio Printing</span>
           <h1>Ultraa Album &mdash; Handcrafted Memories</h1>

@@ -18,7 +18,7 @@ function renderOurProductsPage() {
         </div>
       </div>
 
-      <div class="product-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+      <div class="product-grid">
         <!-- 1. Flush Mount Albums -->
         ${ProductTile({
           title: 'Flush Mount Albums',

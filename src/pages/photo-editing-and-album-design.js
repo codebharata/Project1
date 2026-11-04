@@ -12,7 +12,7 @@ function renderPhotoEditingAndAlbumDesignPage() {
         </p>
       </div>
 
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-xl); margin-bottom: var(--space-2xl); align-items: center;">
+      <div class="two-col-grid align-center" style="margin-bottom: var(--space-2xl);">
         <div>
           <h2 style="font-size: 1.5rem;">Why Combined Editing &amp; Design Matters</h2>
           <p>

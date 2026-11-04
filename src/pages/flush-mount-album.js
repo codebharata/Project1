@@ -4,7 +4,7 @@ function renderFlushMountAlbumPage() {
   const content = `
   <section class="section bg-paper">
     <div class="container">
-      <div style="display: grid; grid-template-columns: 7fr 5fr; gap: var(--space-xl); align-items: center; margin-bottom: var(--space-2xl);">
+      <div class="page-hero-grid">
         <div>
           <span class="eyebrow">Products &bull; Hand-Bound Craftsmanship</span>
           <h1>Flush Mount Albums</h1>
@@ -31,7 +31,7 @@ function renderFlushMountAlbumPage() {
       </div>
 
       <!-- Specifications Grid -->
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-lg); padding: var(--space-xl) 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); margin-bottom: var(--space-2xl);">
+      <div class="features-row-grid">
         <div>
           <h2 style="font-size: 1.35rem; margin-bottom: var(--space-xs);">Panoramic Spreads</h2>
           <p style="color: var(--ink-soft); font-size: 0.9375rem;">
@@ -60,7 +60,7 @@ function renderFlushMountAlbumPage() {
           Creating the cover is one of the most exciting moments in the album design process. Ultraa Albums offers richness of materials and customizations: handmade covers with aesthetic sensibility.
         </p>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-lg);">
+        <div class="product-grid">
           <div style="border: 1px solid var(--line); border-radius: var(--radius-sm); padding: var(--space-md); background: var(--paper);">
             <h3 style="font-size: 1.25rem;">Acrylic-Crystal Cover Pad</h3>
             <p style="font-size: 0.9375rem; color: var(--ink-soft);">
@@ -110,7 +110,7 @@ function renderFlushMountAlbumPage() {
         <h2>Handcrafted Album Finishes</h2>
       </div>
 
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--space-md);">
+      <div class="product-options-grid">
         <div style="border-radius: var(--radius-sm); overflow: hidden; background: var(--paper);">
           <img
             src="/images/flush-mount-album/E-1-scaled-1024x1024.webp"

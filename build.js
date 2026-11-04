@@ -34,6 +34,7 @@ const { renderLanding2023Page } = require('./src/pages/landing-2023');
 const { render404Page } = require('./src/pages/404');
 
 const DIST_DIR = path.join(__dirname, 'dist');
+const DOCS_DIR = path.join(__dirname, 'docs');
 
 function copyDirRecursive(src, dest) {
   if (!fs.existsSync(src)) return;
@@ -48,6 +49,19 @@ function copyDirRecursive(src, dest) {
       fs.copyFileSync(srcPath, destPath);
     }
   }
+}
+
+function relativizeHtml(html, routePath) {
+  const isRoot = (routePath === '/' || routePath === '/404.html' || routePath === '404.html');
+  const prefix = isRoot ? './' : '../';
+
+  // 1. Relativize src="/..." where not followed by / (e.g. //cdn.example.com)
+  let result = html.replace(/(src=["'])\/(?!\/)/g, `$1${prefix}`);
+
+  // 2. Relativize href="/..." where not followed by /
+  result = result.replace(/(href=["'])\/(?!\/)/g, `$1${prefix}`);
+
+  return result;
 }
 
 function build() {
@@ -99,9 +113,10 @@ function build() {
     { path: '/landing-2023/', file: 'landing-2023/index.html', renderer: renderLanding2023Page },
   ];
 
-  console.log(`Rendering ${routes.length} main pages...`);
+  console.log(`Rendering ${routes.length} main pages with relative paths...`);
   for (const r of routes) {
-    const html = r.renderer();
+    const rawHtml = r.renderer();
+    const html = relativizeHtml(rawHtml, r.path);
     const dest = path.join(DIST_DIR, r.file);
     fs.mkdirSync(path.dirname(dest), { recursive: true });
     fs.writeFileSync(dest, html, 'utf-8');
@@ -109,7 +124,8 @@ function build() {
   }
 
   // 5. Render 404 Page
-  const html404 = render404Page();
+  const rawHtml404 = render404Page();
+  const html404 = relativizeHtml(rawHtml404, '/404.html');
   fs.writeFileSync(path.join(DIST_DIR, '404.html'), html404, 'utf-8');
   console.log(`  ✓ Built 404 -> 404.html (${html404.length} bytes)`);
 
@@ -118,13 +134,13 @@ function build() {
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="refresh" content="0; url=/flush-mount-album/" />
+  <meta http-equiv="refresh" content="0; url=../flush-mount-album/" />
   <link rel="canonical" href="https://ultraaalbums.com/flush-mount-album/" />
   <title>Redirecting to Flush Mount Album...</title>
 </head>
 <body>
-  <p>Redirecting to <a href="/flush-mount-album/">Flush Mount Album</a>...</p>
-  <script>window.location.replace('/flush-mount-album/');</script>
+  <p>Redirecting to <a href="../flush-mount-album/">Flush Mount Album</a>...</p>
+  <script>window.location.replace('../flush-mount-album/');</script>
 </body>
 </html>`;
   const redirectDest = path.join(DIST_DIR, 'mount-flush-album/index.html');
@@ -153,8 +169,35 @@ ${routes.map(r => `  <url>
   fs.writeFileSync(path.join(DIST_DIR, 'sitemap.xml'), sitemapXml, 'utf-8');
   console.log(`  ✓ Generated sitemap.xml with ${routes.length} URLs`);
 
-  console.log('\nBuild complete! All routes successfully generated in /dist.');
+  // 10. .nojekyll in dist
+  fs.writeFileSync(path.join(DIST_DIR, '.nojekyll'), '', 'utf-8');
+  console.log(`  ✓ Created dist/.nojekyll`);
+
+  // 11. Mirror to docs/ directory for GitHub Pages
+  console.log('Mirroring build to docs/ directory...');
+  copyDirRecursive(DIST_DIR, DOCS_DIR);
+  console.log('  ✓ Mirrored to docs/');
+
+  // 12. Root index.html redirect fallback for GitHub Pages root deployments
+  const rootIndexHtml = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="refresh" content="0; url=./dist/" />
+  <link rel="canonical" href="https://ultraaalbums.com/" />
+  <title>Ultraa Album | Photo Album Manufacturer Mumbai</title>
+  <script>window.location.replace('./dist/');</script>
+</head>
+<body>
+  <p>Loading Ultraa Album... <a href="./dist/">Click here to enter</a>.</p>
+</body>
+</html>`;
+  fs.writeFileSync(path.join(__dirname, 'index.html'), rootIndexHtml, 'utf-8');
+  fs.writeFileSync(path.join(__dirname, '.nojekyll'), '', 'utf-8');
+  console.log(`  ✓ Created root index.html and .nojekyll`);
+
+  console.log('\nBuild complete! All routes successfully generated in /dist and /docs.');
 }
 
 build();
-

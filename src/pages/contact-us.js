@@ -30,7 +30,7 @@ function renderContactPage() {
         </p>
       </div>
 
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2xl); align-items: start;">
+      <div class="contact-grid">
         <!-- Left: Contact Information -->
         <div>
           <div style="margin-bottom: var(--space-lg); border-bottom: 1px solid var(--line); padding-bottom: var(--space-md);">

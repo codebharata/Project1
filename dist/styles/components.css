@@ -44,6 +44,13 @@
   opacity: 0.7;
 }
 
+@media (max-width: 600px) {
+  .announcement-bar {
+    padding: 6px var(--space-xl) 6px var(--space-sm);
+    font-size: 0.75rem;
+  }
+}
+
 /* ==========================================================================
    2. Header & Navigation
    ========================================================================== */
@@ -190,7 +197,7 @@
   display: none;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1180px) {
   .primary-nav,
   .header-actions .btn {
     display: none;
@@ -347,6 +354,12 @@
   align-items: flex-end;
   justify-content: space-between;
   margin-bottom: var(--space-lg);
+}
+
+@media (max-width: 480px) {
+  .occasions-scroller {
+    grid-auto-columns: minmax(240px, 85vw);
+  }
 }
 
 .occasions-scroller {
@@ -873,6 +886,15 @@
   display: flex;
 }
 
+@media (max-width: 480px) {
+  .contact-modal-overlay {
+    padding: var(--space-xs);
+  }
+  .contact-modal {
+    padding: var(--space-md) var(--space-sm);
+  }
+}
+
 .contact-modal {
   background-color: var(--paper);
   border: 1px solid var(--line);
@@ -970,4 +992,118 @@
 
 .direct-contacts p {
   margin-bottom: 6px;
+}
+
+/* ==========================================================================
+   12. Responsive Grid Utilities (Replacing rigid inline grid styles)
+   ========================================================================== */
+.two-col-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+}
+
+.two-col-grid.align-center {
+  align-items: center;
+}
+
+@media (max-width: 840px) {
+  .two-col-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+}
+
+.page-hero-grid {
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+  gap: var(--space-xl);
+  align-items: center;
+  margin-bottom: var(--space-2xl);
+}
+
+@media (max-width: 900px) {
+  .page-hero-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-xl);
+  }
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2xl);
+  align-items: start;
+}
+
+@media (max-width: 840px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+}
+
+.blog-card-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: var(--space-lg);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: var(--space-xl);
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .blog-card-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+}
+
+.specs-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  padding: var(--space-lg) 0;
+  border-bottom: 1px solid var(--line);
+  gap: var(--space-lg);
+  align-items: baseline;
+}
+
+@media (max-width: 640px) {
+  .specs-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xs);
+    padding: var(--space-md) 0;
+  }
+}
+
+.features-row-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-lg);
+  padding: var(--space-xl) 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  margin-bottom: var(--space-2xl);
+}
+
+@media (max-width: 600px) {
+  .features-row-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+    padding: var(--space-lg) 0;
+    margin-bottom: var(--space-xl);
+  }
+}
+
+.product-options-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-md);
+}
+
+@media (max-width: 480px) {
+  .product-options-grid {
+    grid-template-columns: 1fr;
+  }
 }

@@ -1,0 +1,44 @@
+:root {
+  /* Color Tokens - The only hex definitions in the entire project */
+  --paper: #FBF8F3;
+  --blush: #F2DAD3;
+  --sage: #D8E2D3;
+  --sky: #D6E2EA;
+  --butter: #F3E7C6;
+  --ink: #2A2724;
+  --ink-soft: #6A645D;
+  --line: #E4DDD2;
+
+  /* Typography Tokens */
+  --font-serif: 'Newsreader', Georgia, serif;
+  --font-sans: 'Instrument Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Spacing Tokens */
+  --space-2xs: 4px;
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 40px;
+  --space-xl: 64px;
+  --space-2xl: 96px;
+  --space-3xl: 128px;
+
+  /* Layout Tokens */
+  --container-max: 1200px;
+  --container-gutter: 24px;
+
+  /* Radii Tokens - strictly 0-4px */
+  --radius-none: 0px;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+
+  /* The single allowed soft shadow rule under product images sitting on a pastel */
+  --shadow-product: 0 4px 16px rgba(42, 39, 36, 0.08);
+
+  /* Modal overlay using token ink */
+  --ink-overlay: rgba(42, 39, 36, 0.4);
+
+  /* Motion */
+  --transition-fast: 200ms ease;
+  --transition-normal: 250ms ease;
+}

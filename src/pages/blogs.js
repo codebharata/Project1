@@ -43,7 +43,7 @@ function renderBlogsPage() {
 
       <div style="display: flex; flex-direction: column; gap: var(--space-xl);">
         ${articles.map(art => `
-        <article style="display: grid; grid-template-columns: 320px 1fr; gap: var(--space-lg); border-bottom: 1px solid var(--line); padding-bottom: var(--space-xl); align-items: center;">
+        <article class="blog-card-grid">
           <div style="width: 100%; aspect-ratio: 3 / 2; background-color: var(--blush); border-radius: var(--radius-sm); overflow: hidden;">
             <img
               src="${art.image}"

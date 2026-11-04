@@ -12,7 +12,7 @@ function renderAlbumDesigningPage() {
         </p>
       </div>
 
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-xl); margin-bottom: var(--space-2xl);">
+      <div class="two-col-grid" style="margin-bottom: var(--space-2xl);">
         <div>
           <h2 style="font-size: 1.5rem;">Why Human Curated Design Beats Generic Software</h2>
           <p>

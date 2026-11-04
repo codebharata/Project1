@@ -5,7 +5,7 @@ function renderImageEditingPage() {
   const content = `
   <section class="section bg-paper">
     <div class="container">
-      <div style="display: grid; grid-template-columns: 7fr 5fr; gap: var(--space-xl); align-items: center; margin-bottom: var(--space-2xl);">
+      <div class="page-hero-grid">
         <div>
           <span class="eyebrow">Services &bull; Professional Retouching</span>
           <h1>Best Image Editing Services</h1>
@@ -31,7 +31,7 @@ function renderImageEditingPage() {
       </div>
 
       <!-- Feature Grid -->
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-lg); padding: var(--space-xl) 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); margin-bottom: var(--space-2xl);">
+      <div class="features-row-grid">
         <div>
           <h2 style="font-size: 1.35rem; margin-bottom: var(--space-xs);">Skin &amp; Portrait Retouching</h2>
           <p style="color: var(--ink-soft); font-size: 0.9375rem;">

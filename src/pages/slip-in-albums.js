@@ -4,7 +4,7 @@ function renderSlipInAlbumsPage() {
   const content = `
   <section class="section bg-paper">
     <div class="container">
-      <div style="display: grid; grid-template-columns: 7fr 5fr; gap: var(--space-xl); align-items: center; margin-bottom: var(--space-2xl);">
+      <div class="page-hero-grid">
         <div>
           <span class="eyebrow">Products &bull; Quick Photo Pockets</span>
           <h1>Slip In Albums</h1>
@@ -31,7 +31,7 @@ function renderSlipInAlbumsPage() {
       </div>
 
       <!-- Features -->
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-lg); padding: var(--space-xl) 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); margin-bottom: var(--space-2xl);">
+      <div class="features-row-grid">
         <div>
           <h2 style="font-size: 1.35rem; margin-bottom: var(--space-xs);">Up to 300 Photo Capacity</h2>
           <p style="color: var(--ink-soft); font-size: 0.9375rem;">
@@ -53,7 +53,7 @@ function renderSlipInAlbumsPage() {
       </div>
 
       <!-- Gallery -->
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-xl); margin-bottom: var(--space-2xl);">
+      <div class="two-col-grid" style="margin-bottom: var(--space-2xl);">
         <div style="border-radius: var(--radius-sm); overflow: hidden; background: var(--paper); border: 1px solid var(--line); padding: var(--space-md);">
           <img
             src="/images/slip-in-albums/DSC_0438-scaled-1024x1024.webp"
